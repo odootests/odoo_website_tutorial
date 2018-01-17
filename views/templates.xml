@@ -1,9 +1,12 @@
 <odoo>
     <data>
 		<template id='list_teachers'>
-			<title>Academy</title>
+			<title>Page Title Here Academy</title>
 			<t t-foreach='teachers' t-as='teacher'>
 				<p> <t t-esc='teacher'/> </p>
+			</t>
+			<t t-foreach='all_teachers' t-as='object'>
+				<p> <t t-esc='object.teacher_name'/> </p>
 			</t>
 		</template>
 
