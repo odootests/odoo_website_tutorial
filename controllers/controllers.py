@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
 from odoo import http
 
+class Adacemy(http.Controller):
+    @http.route('/academy/academy', auth='public')
+    def index(self, **kw):
+        return "Hey"
+
+
+
 # class Academy(http.Controller):
 #     @http.route('/academy/academy/', auth='public')
 #     def index(self, **kw):
