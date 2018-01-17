@@ -1,5 +1,13 @@
 <odoo>
     <data>
+		<template id='list_teachers'>
+			<title>Academy</title>
+			<t t-foreach='teachers' t-as='teacher'>
+				<p> <t t-esc='teacher'/> </p>
+			</t>
+		</template>
+
+
         <!-- <template id="listing"> -->
         <!--   <ul> -->
         <!--     <li t-foreach="objects" t-as="object"> -->

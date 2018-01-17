@@ -2,9 +2,16 @@
 from odoo import http
 
 class Adacemy(http.Controller):
-    @http.route('/academy/academy', auth='public')
-    def index(self, **kw):
-        return "Hey"
+	@http.route('/academy/academy/', auth='public')
+	def index(self, **kw):
+		return "Hey"
+
+	@http.route('/academy/teachers/', auth='public')
+	def list_teachers(self, **kw):
+		context_val = {
+			'teachers': ['Diana Dille', 'Jahir Jahon', "Lester Lestery"]
+		}
+		return http.request.render('academy.list_teachers', context_val)
 
 
 
