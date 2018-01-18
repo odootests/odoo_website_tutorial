@@ -6,11 +6,12 @@ class Teachers(models.Model):
 	_name='academy.teachers'
 	name = fields.Char("Teacher Name")
 	biography = fields.Html("Teacher Bio")
-	course_ids = fields.One2many('academy.courses', 'teacher_id', string='Courses')
+	course_ids = fields.One2many('product.template', 'teacher_id', string='Courses')
 	
 class Course(models.Model):
-	_name='academy.courses'
-	_inherit='mail.thread'
+	# _name='product.template'
+	# _inherit='mail.thread'
+	_inherit='product.template'
 	name = fields.Char("Course Name")
 	teacher_id = fields.Many2one('academy.teachers', 'Teacher', index=True, required=True)
 

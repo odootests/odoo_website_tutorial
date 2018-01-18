@@ -46,7 +46,7 @@
     <!-- Courses List Action Record -->
     <record id='action_academy_courses' model='ir.actions.act_window'>
       <field name='name'>Academy Courses</field>
-      <field name='res_model'>academy.courses</field>
+      <field name='res_model'>product.template</field>
       <field name='view_type'>form</field>
       <field name='view_mode'>tree,form</field>
     </record>
@@ -54,7 +54,7 @@
     <!-- Courses Search View Record -->
     <record id='academy_courses_search' model='ir.ui.view'>
       <field name='name'>Academy Courses: Search</field>
-      <field name='model'>academy.courses</field>
+      <field name='model'>product.template</field>
       <field name='arch' type='xml'>
         <search>
           <field name='name'/>
@@ -66,7 +66,7 @@
     <!-- Course List View Record -->
     <record id='academy_course_list' model='ir.ui.view'>
       <field name='name'>Academy Courses: List</field>
-      <field name='model'>academy.courses</field>
+      <field name='model'>product.template</field>
       <field name='arch' type='xml'>
         <tree string='Courses'>
           <field name='name'/>
@@ -78,14 +78,12 @@
     <!-- Course Form View Record -->
     <record id='academy_course_form' model='ir.ui.view'>
       <field name='name'>Academy Courses Form</field>
-      <field name='model'>academy.courses</field>
+      <field name='model'>product.template</field>
       <field name='arch' type='xml'>
         <form string='Course Form'>
           <sheet>
             <group>
-              <!-- <label for='name'/> -->
               <field name='name'/>
-              <!-- <label for='teacher_id'/> -->
               <field name='teacher_id'/>
             </group>
           </sheet>

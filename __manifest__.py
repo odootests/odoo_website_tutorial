@@ -7,13 +7,14 @@
    'website': "http://www.yourcompanysite.com",
    'category': 'Website',
    'version': '0.1',
-   'depends': ['base', 'website', 'mail'],
+   'depends': ['base', 'website', 'mail', 'website_sale'],
    'application': True,
    'data': [
         #'security/ir.model.access.csv',
       'views/views.xml',
       'views/templates.xml',
-      'views/allteachers.xml'
+      'views/allteachers.xml',
+		'views/data.xml'
    ],
    'demo':['demo/demo.xml']
 }
