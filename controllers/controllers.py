@@ -2,10 +2,12 @@
 from odoo import http
 
 class Adacemy(http.Controller):
+	#return server response 
 	@http.route('/academy/academy/', auth='public')
 	def index(self, **kw):
 		return "Hey"
 
+	#return hard-coded array and render template with id: list_teachers
 	@http.route('/academy/teachers/', auth='public')
 	def list_teachers(self, **kw):
 		context_val = {
@@ -13,6 +15,7 @@ class Adacemy(http.Controller):
 		}
 		return http.request.render('academy.list_teachers', context_val)
 
+	#return all records from model and render template with specific id
 	@http.route('/academy/allteachers/', auth='public', website=True)
 	def get_all_teachers(self, **kw):
 		Teachers = http.request.env['academy.teachers']
@@ -22,13 +25,21 @@ class Adacemy(http.Controller):
 		}
 		return http.request.render('academy.get_all_teachers', context)
 
-	@http.route('/academy/<name>/', auth='public', website=True)
+	#pass variables through routes
+	@http.route('/academy/new/<name>/', auth='public', website=True)
 	def display_name(self, name):
 		return '<h1> {} </h1>'.format(name)
 
+	#pass variables of specific type through routes
 	@http.route('/academy/new/<int:id>/', auth='public', website=True)
 	def display_value_with_type(self, id):
 		return '<h1> {} ({})</h1>'.format(id, type(id).__name__)
+
+	#set route that searches the model and returns an object/record
+	@http.route('/academy/<model("academy.teachers"):dbobject>/', auth='public', website=True)
+	def show_person(self, dbobject):
+		context = {'person': dbobject}
+		return http.request.render('academy.biography', context)
 
 
 # class Academy(http.Controller):

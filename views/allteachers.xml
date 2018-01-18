@@ -7,9 +7,23 @@
                     <div class='container'>
                         <t t-foreach='teachers' t-as='object'>
                             <p> <t t-esc='object.id'/> <t t-esc='object.teacher_name'/> </p>
+                            <a t-attf-href='/academy/{{slug(object)}}'> <t t-esc='object.teacher_name'/> </a> 
                         </t>
                     </div>
                 </div>
+            </t>
+        </template>
+
+        <template id='biography'>
+            <t t-call='website.layout'>
+                <t t-set='title'>Another Page Title</t>
+                <div class='oe_structure'/>
+                <div class='oe_structure'>
+                    <div class='container'>
+                        <h3> <t t-esc='person.teacher_name'/> </h3>
+                    </div>
+                </div>
+
             </t>
         </template>
     </data>    
