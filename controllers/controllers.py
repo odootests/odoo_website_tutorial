@@ -8,17 +8,19 @@ class Adacemy(http.Controller):
 
 	@http.route('/academy/teachers/', auth='public')
 	def list_teachers(self, **kw):
-		#Refer to models using line below
-		Teachers = http.request.env['academy.teachers']
-
-		#Retrieve all records from model
-		all_teachers = Teachers.search([])
-
 		context_val = {
 			'teachers': ['Diana Dille', 'Jahir Jahon', "Lester Lestery"],
-			'all_teachers': all_teachers
 		}
 		return http.request.render('academy.list_teachers', context_val)
+
+	@http.route('/academy/allteachers/', auth='public', website=True)
+	def get_all_teachers(self, **kw):
+		Teachers = http.request.env['academy.teachers']
+		teachers = Teachers.search([])
+		context = {
+			'teachers': teachers
+		}
+		return http.request.render('academy.get_all_teachers', context)
 
 
 

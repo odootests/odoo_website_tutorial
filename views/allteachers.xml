@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <template id='get_all_teachers'>
+            <t t-call='website.layout'>
+                <t t-set='title'>Page Title</t>
+                <div class='oe_structure'>
+                    <div class='container'>
+                        <t t-foreach='teachers' t-as='object'>
+                            <p> <t t-esc='object.id'/> <t t-esc='object.teacher_name'/> </p>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>    
+</odoo>
