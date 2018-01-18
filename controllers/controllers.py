@@ -22,7 +22,9 @@ class Adacemy(http.Controller):
 		}
 		return http.request.render('academy.get_all_teachers', context)
 
-
+	@http.route('/academy/<name>', auth='public', website=True)
+	def display_name(self, name):
+		return '<h1> {} </h1>'.format(name)
 
 # class Academy(http.Controller):
 #     @http.route('/academy/academy/', auth='public')
