@@ -1,38 +1,40 @@
 <odoo>
-    <data>
-        <template id='get_all_teachers'>
-            <t t-call='website.layout'>
-                <t t-set='title'>Page Title</t>
-                <div class='oe_structure'>
-                    <div class='container'>
-                        <t t-foreach='teachers' t-as='object'>
-                            <p> <t t-esc='object.id'/> <t t-esc='object.teacher_name'/> </p>
-                            <a t-attf-href='/academy/{{slug(object)}}'> <t t-esc='object.teacher_name'/> </a> 
-                        </t>
-                    </div>
-                </div>
-            </t>
-        </template>
+	<data>
+   	<template id='get_all_teachers'>
+			<t t-call='website.layout'>
+					<t t-set='title'>Page Title</t>
+					<div class='oe_structure'>
+						<div class='container'>
+							<t t-foreach='teachers' t-as='object'>
+									<p> <t t-esc='object.id'/> <t t-esc='object.teacher_name'/> </p>
+									<a t-attf-href='/academy/{{slug(object)}}'> <t t-esc='object.teacher_name'/> </a> 
+							</t>
+						</div>
+					</div>
+			</t>
+		</template>
 
-        <template id='biography'>
-            <t t-call='website.layout'>
-                <t t-set='title'>Another Page Title</t>
-                <div class='oe_structure'/>
-                <div class='oe_structure'>
-                    <div class='container'>
-                        <div class='col-md-6'>
-                            <h3> <t t-esc='person.teacher_name'/> </h3>
-                            <h5> <t t-esc='person.biography'/> </h5>
-                        </div>
-                        <div class='col-md-6'>
-                            <h3 t-field='person.teacher_name'/>
-                            <h5 t-field='person.biography'/>
-                            <p> Last Modified: <i t-field='person.write_date'/> </p>
-                        </div>
-                    </div>
-                </div>
+		<template id='biography'>
+			<t t-call='website.layout'>
+					<t t-set='title'>Another Page Title</t>
+					<div class='oe_structure'/>
+					<div class='oe_structure'>
+						<div class='container'>
+							<div class='col-md-6'>
+									<h3> <t t-esc='person.teacher_name'/> </h3>
+									<h5> <t t-esc='person.biography'/> </h5>
+							</div>
+							<div class='col-md-6'>
+									<h3 t-field='person.teacher_name'/>
+									<h5 t-field='person.biography'/>
+									<p> Last Modified: <i t-field='person.write_date'/> </p>
+									<p> Last Modified Long: <i t-field='person.write_date' t-options='{"format": "long"}'/> </p>
+									<p> Last Modified Widget: <i t-field='person.write_date' t-options='{"widget":"relative"}'/> </p>
+							</div>
+						</div>
+					</div>
 
-            </t>
-        </template>
-    </data>    
+			</t>
+		</template>
+   </data>    
 </odoo>
