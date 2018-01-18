@@ -10,6 +10,7 @@ class Teachers(models.Model):
 	
 class Course(models.Model):
 	_name='academy.courses'
+	_inherit='mail.thread'
 	name = fields.Char("Course Name")
 	teacher_id = fields.Many2one('academy.teachers', 'Teacher', index=True, required=True)
 
