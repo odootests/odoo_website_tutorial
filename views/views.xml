@@ -4,6 +4,8 @@
     <record id='action_academy_teachers' model='ir.actions.act_window'>
       <field name='name'>Academy Teachers</field>
       <field name='res_model'>academy.teachers</field>
+      <field name='view_type'>form</field>
+      <field name='view_mode'>tree,form</field>
     </record>
 
     <record id='academy_teacher_tree' model='ir.ui.view'>
@@ -27,12 +29,15 @@
       <field name='arch' type='xml'>
         <form>
           <sheet>
-            <label for='name'/> 
-            <field name='name'/>
-          </sheet>
-          <sheet>
-            <label for='biography'/>
-            <field name='biography'/>
+            <group>
+              <field name='name'/>
+              <field name='biography'/>
+            </group>
+            <field name='course_ids'>
+              <tree string='Courses' editable='bottom'>
+                <field name='name'/>
+              </tree>
+            </field>
           </sheet>
         </form>
       </field>
@@ -42,6 +47,8 @@
     <record id='action_academy_courses' model='ir.actions.act_window'>
       <field name='name'>Academy Courses</field>
       <field name='res_model'>academy.courses</field>
+      <field name='view_type'>form</field>
+      <field name='view_mode'>tree,form</field>
     </record>
 
     <!-- Courses Search View Record -->
