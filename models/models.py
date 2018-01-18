@@ -4,9 +4,14 @@ from odoo import models, fields, api
 
 class Teachers(models.Model):
 	_name='academy.teachers'
-	teacher_name=fields.Char()
-	biography = fields.Html()
+	name = fields.Char("Teacher Name")
+	biography = fields.Html("Teacher Bio")
 	
+class Course(models.Model):
+	_name='academy.courses'
+	name = fields.Char("Course Name")
+	teacher_id = fields.Many2one('academy.teachers', 'Teacher', index=True, required=True)
+
 # class academy(models.Model):
 #     _name = 'academy.academy'
 
