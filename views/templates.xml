@@ -5,8 +5,9 @@
 			<t t-foreach='teachers' t-as='teacher'>
 				<p> <t t-esc='teacher'/> </p>
 			</t>
+            <h1> Array Items from DB Below </h1>
 			<t t-foreach='all_teachers' t-as='object'>
-				<p> <t t-esc='object.teacher_name'/> </p>
+				<p> <t t-esc ='object.id'/> <t t-esc='object.teacher_name'/> </p>
 			</t>
 		</template>
 
