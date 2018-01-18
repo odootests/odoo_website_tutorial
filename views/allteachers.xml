@@ -5,12 +5,32 @@
 					<t t-set='title'>Page Title</t>
 					<div class='oe_structure'>
 						<div class='container'>
-							<t t-foreach='teachers' t-as='object'>
+							<div class='col-md-6'>
+								<t t-foreach='teachers' t-as='object'>
 									<p> <t t-esc='object.id'/> <t t-esc='object.teacher_name'/> </p>
 									<a t-attf-href='/academy/{{slug(object)}}'> <t t-esc='object.teacher_name'/> </a> 
-							</t>
+								</t>
+							</div>
+							<div class='col-md-6'>
+								<h1> Test Here </h1>
+								<ul>
+									<li t-foreach="teachers" t-as="object">
+										<a t-attf-href="#{ root }/objects/#{ object.id }">
+											<t t-esc="object.teacher_name"/>
+										</a>
+										<dl>
+											<t t-foreach="object._fields" t-as="field">
+												<dt><t t-esc="field"/></dt>
+												<dd><t t-esc="object[field]"/></dd>
+											</t>
+										</dl>
+									</li>
+								</ul>
+								<div class='mt24'/>
+							</div>
 						</div>
 					</div>
+		
 			</t>
 		</template>
 
