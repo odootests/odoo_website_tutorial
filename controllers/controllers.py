@@ -22,9 +22,14 @@ class Adacemy(http.Controller):
 		}
 		return http.request.render('academy.get_all_teachers', context)
 
-	@http.route('/academy/<name>', auth='public', website=True)
+	@http.route('/academy/<name>/', auth='public', website=True)
 	def display_name(self, name):
 		return '<h1> {} </h1>'.format(name)
+
+	@http.route('/academy/new/<int:id>/', auth='public', website=True)
+	def display_value_with_type(self, id):
+		return '<h1> {} ({})</h1>'.format(id, type(id).__name__)
+
 
 # class Academy(http.Controller):
 #     @http.route('/academy/academy/', auth='public')
