@@ -2,11 +2,11 @@
     <data>
             
         <record id='padilla' model='academy.teachers'>
-            <field name='teacher_name'>Dina Dine</field>
+            <field name='name'>Dina Dine</field>
         </record>
 
         <record id='carol' model='academy.teachers'>
-            <field name='teacher_name'>Carol Carol </field>
+            <field name='name'>Carol Carol </field>
         </record>
 
 
